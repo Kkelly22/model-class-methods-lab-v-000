@@ -3,10 +3,11 @@ class Classification < ActiveRecord::Base
   has_many :boats, through: :boat_classifications
 
   def my_all
-    select(:id, :name, :created_at, :updated_at).uniq
+    all
   end
 
   def longest
+    joins(:boats).where(classifications: { name: "Motorboat" }).uniq
   end
 
 end
