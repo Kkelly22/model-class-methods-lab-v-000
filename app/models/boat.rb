@@ -16,7 +16,7 @@ class Boat < ActiveRecord::Base
   end
 
   def self.longest
-    order(length: :desc).limit(1)
+    order(length: :desc).first
   end
 
   def self.last_three_alphabetically
