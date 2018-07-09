@@ -7,7 +7,7 @@ class Classification < ActiveRecord::Base
   end
 
   def longest
-    joins(:boats).where(classifications: { name: "Motorboat" }).uniq
+    Boat.longest.classifications
   end
 
 end
