@@ -17,11 +17,11 @@ class Boat < ActiveRecord::Base
   end
 
   def self.longest
-    order(length: :desc).first
+    all.order(length: :desc).first
   end
 
   def self.last_three_alphabetically
-    order(name: :desc).limit(3)
+    all.order(name: :desc).limit(3)
   end
 
   def self.without_a_captain
